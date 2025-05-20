@@ -24,6 +24,14 @@ export default function FilteredNewsPage({ params }) {
     links = [];
   }
 
+  if (
+    (selectedYear && !getSelectedNewsYears().includes(+selectedYear)) ||
+    (selectedMonth &&
+      !getAvailableNewsMonths(selectedYear).includes(+selectedMonth))
+  ) {
+    throw new Error("Invalid filter.");
+  }
+
   let newsContent = <p>No news found for selected period.</p>;
 
   if (news && news.length > 0) newsContent = <NewsList news={news} />;
