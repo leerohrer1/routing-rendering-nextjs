@@ -25,7 +25,7 @@ export default function FilteredNewsPage({ params }) {
   }
 
   if (
-    (selectedYear && !getSelectedNewsYears().includes(+selectedYear)) ||
+    (selectedYear && !getAvailableNewsYears().includes(+selectedYear)) ||
     (selectedMonth &&
       !getAvailableNewsMonths(selectedYear).includes(+selectedMonth))
   ) {
