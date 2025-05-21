@@ -1,9 +1,9 @@
 export function GET(request) {
-    console.log(request);
+  console.log(request);
 
-    return new Response('Hello!');
+  return new Response("Hello!");
 }
 
 export function POST(request) {
-    return request.body;
+  return request.body;
 }
